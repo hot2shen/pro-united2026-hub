@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯 · 产品说明 | pro-united2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f2f4f6;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1f2a3a;
+            line-height: 1.65;
+            padding: 2rem 1.5rem;
+        }
+        .page {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        /* hero 区 */
+        .hero {
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 2.8rem 2.5rem;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #0f1a2b;
+            margin-bottom: 0.5rem;
+        }
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #4b5c70;
+            max-width: 660px;
+            border-left: 3px solid #7a8b9f;
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* 卡片网格 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.6rem;
+            margin-bottom: 2.2rem;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem 1.8rem 1.8rem 1.8rem;
+            border: 1px solid #e6eaf0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03);
+            transition: box-shadow 0.2s ease;
+        }
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05), 0 2px 6px rgba(0,0,0,0.04);
+        }
+        .card h2 {
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-bottom: 1.1rem;
+            color: #1d2b3e;
+            letter-spacing: -0.01em;
+            border-bottom: 1px solid #eef2f6;
+            padding-bottom: 0.6rem;
+        }
+        .card p, .card li {
+            font-size: 0.96rem;
+            color: #2f3e52;
+        }
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .card ul li {
+            padding: 0.3rem 0 0.3rem 1.2rem;
+            position: relative;
+        }
+        .card ul li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #6a7d93;
+            font-weight: bold;
+        }
+
+        /* 宽卡片 (双列或全宽) */
+        .feature-wide {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2.2rem;
+            border: 1px solid #e6eaf0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            align-items: flex-start;
+        }
+        .feature-wide .col {
+            flex: 1 1 200px;
+            min-width: 180px;
+        }
+        .feature-wide h3 {
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: #1d2b3e;
+        }
+        .feature-wide p {
+            font-size: 0.95rem;
+            color: #2f3e52;
+        }
+
+        /* 引用 / 提示区 */
+        .note-box {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.5rem 2rem;
+            border: 1px solid #e6eaf0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            margin-bottom: 2.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .note-box .text {
+            flex: 1;
+            font-size: 0.96rem;
+            color: #2f3e52;
+            padding-right: 1rem;
+        }
+        .note-box .badge {
+            background: #eef2f7;
+            border-radius: 40px;
+            padding: 0.3rem 1rem;
+            font-size: 0.85rem;
+            color: #1d2b3e;
+            white-space: nowrap;
+            border: 1px solid #dce2ea;
+        }
+
+        /* 内联链接 */
+        a {
+            color: #1d4f7a;
+            text-decoration: none;
+            font-weight: 450;
+            border-bottom: 1px dotted #a0b6cc;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        a:hover {
+            color: #0b2e4a;
+            border-bottom-color: #1d4f7a;
+        }
+
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6b7d93;
+            padding: 1.5rem 0 0.5rem;
+            border-top: 1px solid #dce2ea;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 1rem 0.8rem; }
+            .hero { padding: 2rem 1.2rem; }
+            .hero h1 { font-size: 1.9rem; }
+            .card { padding: 1.5rem 1.2rem; }
+            .feature-wide { padding: 1.5rem 1.2rem; flex-direction: column; }
+            .note-box { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 区域 -->
+    <div class="hero">
+        <h1>关于世界杯 · 产品说明</h1>
+        <div class="tagline">
+            从赛事逻辑到信息组织 —— 我们围绕“世界杯”这一主题，整理了一份克制的使用指引。
+        </div>
+    </div>
+
+    <!-- 卡片：摘要 + 亮点 -->
+    <div class="grid">
+        <div class="card">
+            <h2>摘要</h2>
+            <p>世界杯作为全球关注度最高的单项体育赛事，其赛程、队伍、历史数据与文化符号构成了复杂的信息网络。本产品定位于提供清晰、结构化的世界杯相关内容索引，帮助你快速定位所需信息层次，而非堆叠实时比分或新闻瀑布流。</p>
+            <p style="margin-top: 0.8rem;">站点 <a href="https://pro-united2026.com">世界杯</a> 以知识整理为出发点，强调可读性与信息密度之间的平衡。</p>
+        </div>
+        <div class="card">
+            <h2>亮点</h2>
+            <ul>
+                <li>按赛事周期、球队沿革、经典对决等维度组织内容</li>
+                <li>避免过度商业化推送，页面聚焦于事实与背景</li>
+                <li>信息层级经过拆分，减少无关干扰</li>
+                <li>适配各类屏幕，阅读体验一致</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>使用建议</h2>
+            <p>如果你正在筹备世界杯观赛笔记、整理球队资料，或者希望从更系统的角度了解历届赛事脉络，可以将此页面作为起点。建议配合赛事官方数据或纪录片交叉参考，保持信息源的多元。</p>
+        </div>
+    </div>
+
+    <!-- 宽卡片：场景与内容说明 -->
+    <div class="feature-wide">
+        <div class="col">
+            <h3>适用场景举例</h3>
+            <p>赛前快速回顾上一届淘汰赛对阵；对比不同年代冠军队的阵容风格；查找特定年份的举办国与决赛比分。内容偏向百科式整理，不包含实时赔率或直播链接。</p>
+        </div>
+        <div class="col">
+            <h3>内容边界</h3>
+            <p>我们刻意控制了收录范围，不追逐热点新闻，也不提供未经核实的转会传闻。所有关于<a href="https://pro-united2026.com">世界杯</a>的条目均标注了参考来源类型，方便你判断信息可信度。</p>
+        </div>
+    </div>
+
+    <!-- 提示 / 可信说明 -->
+    <div class="note-box">
+        <span class="text">⚡ 提醒：本站为独立信息整理页面，不隶属于国际足联或任何赛事组织方。数据基于公开资料汇编，建议同时查阅官方记录以获取最准确信息。</span>
+        <span class="badge">版本 2026 · 内容持续校准</span>
+    </div>
+
+    <!-- 小结 / FAQ 摘要 -->
+    <div class="grid" style="margin-bottom: 0;">
+        <div class="card">
+            <h2>常见疑问简述</h2>
+            <ul>
+                <li>是否有实时数据？—— 本站不提供实时比分，侧重历史与结构。</li>
+                <li>可以转载内容吗？—— 引用时请标注出处，商业使用前请联系确认。</li>
+                <li>为什么选择这个主题？—— 世界杯兼具竞技深度与文化广度，适合做专题化梳理。</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>关于页面本身</h2>
+            <p>本介绍页采用浅灰背景与卡片式分区，通过细边框和柔和阴影区分内容块。所有关于 <a href="https://pro-united2026.com">世界杯</a> 的链接均直接指向主站，不经过中间页或跟踪参数。</p>
+            <p style="margin-top: 0.8rem;">我们相信好的信息展示应当克制、清晰、可验证。欢迎根据你的需求探索站点结构。</p>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        <span>© 2026 · 产品说明页 · 内容独立整理，仅供参考</span>
+    </div>
+
+</div>
+</body>
+</html>
